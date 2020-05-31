@@ -15,29 +15,15 @@
 //==============================================================================
 /*
 */
-class FaderLookAndFeel    : public LookAndFeel_V2
+class FaderLookAndFeel    : public Component
 {
 public:
     FaderLookAndFeel();
+    ~FaderLookAndFeel();
 
-
-    void drawRoundThumb(Graphics& g, float x, float y, float diameter, Colour colour, float outlineThickness);
-
-    void drawLinearSliderThumb(Graphics& g, int x, int y, int width, int height,
-        float sliderPos, float minSliderPos, float maxSliderPos,
-        const Slider::SliderStyle style, Slider& slider) override;
-    
-    void drawLinearSliderBackground(Graphics& g, int x, int y, int width, int height,
-        float sliderPos,
-        float minSliderPos,
-        float maxSliderPos,
-        const Slider::SliderStyle style, Slider& slider) override;
-
-    void drawLinearSlider(Graphics& g, int x, int y, int width, int height,
-        float sliderPos, float minSliderPos, float maxSliderPos,
-        const Slider::SliderStyle style, Slider& slider) override;
+    void paint (Graphics&) override;
+    void resized() override;
 
 private:
-
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FaderLookAndFeel)
 };

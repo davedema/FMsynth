@@ -13,19 +13,18 @@
 #include <JuceHeader.h>
 #include "ModuleGui.h"
 #include "KnobSection.h"
-#include "FaderLookAndFeel.h"
 
 //==============================================================================
 /*
 */
-class MasterGui : public ModuleGui, public Slider::Listener
+class MasterGui    : public ModuleGui, public Slider::Listener
 {
 public:
     MasterGui();
     MasterGui(int x, int y, int width, int height);
     ~MasterGui();
 
-    void paint(Graphics&) override;
+    void paint (Graphics&) override;
     void resized() override;
 
 
@@ -35,10 +34,7 @@ public:
     void sliderDragEnded(Slider* slider) override;
 
 private:
-    FaderLookAndFeel MySliderLAF;
     Slider fader;
     MySender* sender;
-
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MasterGui)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MasterGui)
 };
-
